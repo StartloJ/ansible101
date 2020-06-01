@@ -1,11 +1,4 @@
 ---
 - hosts: localhost
   tasks:
-    - name: Ensure dependencies for docker
-      pip:
-        name: docker
-    - docker_container:
-        name: kitty-hell
-        image: nginx:1.18
-        published_ports: 8080:80
-        state: started
+    - name: Pls. change me
