@@ -1,0 +1,17 @@
+[all]
+haproxy-1 ansible_host=127.0.0.1 ansible_user=touch ansible_port=22
+nginx-1   ansible_host=127.0.0.2 ansible_user=touch ansible_port=22
+nodejs-1  ansible_host=127.0.0.3 ansible_user=touch ansible_port=22
+mongodb-1 ansible_host=127.0.0.4 ansible_user=touch ansible_port=22
+
+[haproxy]
+haproxy-1
+
+[nginx]
+nginx-1
+
+[nodejs]
+nodejs-1
+
+[mongodb]
+mongodb-1
