@@ -1,0 +1,26 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+# lint: |
+#   set -e
+#   yamllint .
+#   ansible-lint
+platforms:
+  - name: bionic
+    pre_build_image: true
+    image: quay.io/paulfantom/molecule-systemd:ubuntu-18.04
+    docker_host: "${DOCKER_HOST:-unix://var/run/docker.sock}"
+    privileged: true
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+provisioner:
+  name: ansible
+  # lint:
+  #   name: ansible-lint
+  playbooks:
+    prepare: prepare.yml
+    converge: ../../playbook.yml
+verifier:
+  name: ansible
